@@ -3,6 +3,7 @@
 @tailwind utilities;
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -19,12 +20,42 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+.header {
+  transition: top 0.3s; /* Smooth scroll behavior */
+}
+
+.header.hidden {
+  top: -100px; /* Adjust based on your header height */
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column; /* Stack elements vertically on mobile */
+    padding: 10px; /* Adjust padding for small screens */
+  }
+
+  .header .container {
+    justify-content: center; /* Center elements */
+    text-align: center; /* Center text */
+  }
+  
+  .header span {
+    font-size: 2xl; /* Smaller font size */
+  }
 }
 
 @layer utilities {

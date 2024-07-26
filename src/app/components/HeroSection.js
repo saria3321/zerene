@@ -38,23 +38,22 @@ const HeroSection = () => {
 
     return (
         <div className={`relative h-screen flex justify-center items-center ${isScrolled ? '' : 'bg-[#a68e7f]'}`} style={isScrolled ? { backgroundImage: "url('/images/footer-bg.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' } : {}}>
-            <Slider {...settings} className="w-[800px] h-[450px]">
+            <Slider {...settings} className="w-[90%] md:w-[800px] h-[450px]">
                 {images.map((image, index) => (
                     <div key={index} className="w-full h-full flex justify-center items-center">
                         <img
                             src={image}
                             alt={`Slide ${index}`}
-                            className="object-cover w-[800px] h-[450px]"
+                            className="object-cover w-full h-full"
                         />
                     </div>
                 ))}
             </Slider>
-            <div
-                className="absolute left-12 bottom-35 flex flex-col p-4 bg-hero-pattern bg-cover bg-center"
-            >
-                <h1 className="text-white text-5xl font-bold mb-2">Scent for</h1>
-                <h1 className="text-white text-5xl font-bold mb-4">Serenity</h1>
-                <p className="text-white text-xl">A home away from home</p>
+            <div className={`absolute left-4 md:left-20 bottom-15 flex flex-col p-4 bg-hero-pattern bg-cover bg-center transition-all duration-300 
+                ${isScrolled ? 'md:left-8' : 'md:left-12'}`}>
+                <h1 className="text-white text-3xl md:text-5xl font-bold mb-2 md:ml-2">Scent for</h1>
+                <h1 className="text-white text-3xl md:text-5xl font-bold mb-4 md:ml-2">Serenity</h1>
+                <p className="text-white text-lg md:text-xl text-center md:text-left">A home away from home</p>
             </div>
             <CookieConsentBanner isScrolled={isScrolled} />
         </div>

@@ -51,7 +51,7 @@ const ProductList = () => {
                         <img
                             src={product.image}
                             alt={product.name}
-                            className="w-full h-64 object-cover rounded-lg mb-4"
+                            className="w-full h-64 object-cover mb-4"
                         />
                         <p className="text-gray-700 font-medium text-base">{product.name}</p>
                         <p className="text-gray-500 font-medium text-base">{product.price}</p>
