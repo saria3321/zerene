@@ -44,7 +44,7 @@ const HeroSection = () => {
                         <img
                             src={image}
                             alt={`Slide ${index}`}
-                            className="object-cover w-full h-full"
+                            className="object-cover w-full h-full fixed-size-image"
                         />
                     </div>
                 ))}
@@ -98,4 +98,5 @@ const CookieConsentBanner = ({ isScrolled }) => {
         </div>
     );
 };
+
 export default HeroSection;
