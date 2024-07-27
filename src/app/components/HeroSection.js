@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from 'next/image';
 
 const HeroSection = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -40,11 +41,14 @@ const HeroSection = () => {
         <div className={`relative h-screen flex justify-center items-center ${isScrolled ? 'bg-image-scrolled' : 'bg-image'} md:bg-cover md:bg-center`}>
             <Slider {...settings} className="w-[90%] md:w-[800px] h-[50vh] md:h-[450px] mt-48 md:mt-0">
                 {images.map((image, index) => (
-                    <div key={index} className="w-full h-full flex justify-center items-center">
-                        <img
+                    <div key={index} className="relative w-full h-full">
+                        <Image
                             src={image}
                             alt={`Slide ${index}`}
-                            className="object-cover w-full h-full fixed-size-image"
+                            width={800}
+                            height={450}
+                            objectFit="cover"
+                            className="fixed-size-image"
                         />
                     </div>
                 ))}

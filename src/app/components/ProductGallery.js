@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 const ProductGallery = () => {
     const images = [
@@ -15,10 +16,12 @@ const ProductGallery = () => {
             <div className="container mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 px-4">
                 {images.map((image, index) => (
                     <div key={index} className="flex justify-center">
-                        <img
+                        <Image
                             src={image}
                             alt={`Product ${index + 1}`}
-                            className="w-full h-48 object-cover"
+                            width={500}
+                            height={500}
+                            className="object-cover"
                         />
                     </div>
                 ))}

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 const products = [
     {
@@ -48,10 +49,12 @@ const ProductList = () => {
             <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
                 {products.map((product, index) => (
                     <div key={index} className="rounded-lg overflow-hidden text-center p-4 transform transition duration-300 hover:scale-105">
-                        <img
+                        <Image
                             src={product.image}
                             alt={product.name}
-                            className="w-full h-64 object-cover mb-4"
+                            width={300}
+                            height={300}
+                            className="object-cover w-full h-64 mb-4"
                         />
                         <p className="text-gray-700 font-medium text-base">{product.name}</p>
                         <p className="text-gray-500 font-medium text-base">{product.price}</p>

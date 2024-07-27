@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 const Footer = () => {
     return (
@@ -16,9 +17,9 @@ const Footer = () => {
                     <button type="submit" className="px-8 py-2 text-lg bg-[#a68e7f] text-white rounded-b-lg md:rounded-r-lg md:rounded-b-none cursor-pointer w-full md:w-auto">Submit</button>
                 </form>
                 <div className="social-icons flex justify-center gap-4 md:gap-8">
-                    <a href="#"><img src="/images/facebook.png" alt="Facebook" className="w-6 h-6" /></a>
-                    <a href="#"><img src="/images/instagram.png" alt="Instagram" className="w-6 h-6" /></a>
-                    <a href="#"><img src="/images/whatsapp.png" alt="Whatsapp" className="w-6 h-6" /></a>
+                    <a href="#"><Image src="/images/facebook.png" alt="Facebook" width={24} height={24} className="w-6 h-6" /></a>
+                    <a href="#"><Image src="/images/instagram.png" alt="Instagram" width={24} height={24} className="w-6 h-6" /></a>
+                    <a href="#"><Image src="/images/whatsapp.png" alt="Whatsapp" width={24} height={24} className="w-6 h-6" /></a>
                 </div>
             </div>
             <div className="footer-bottom px-4 py-4">

@@ -13,7 +13,7 @@ const BeliefsSection = () => {
                     <div className="border-b border-white w-16 mb-4 mx-auto md:mx-0"></div>
                 </div>
                 <div className="w-full md:w-1/2 text-white py-8 text-center md:text-left md:pl-8">
-                    <p className="text-sm md:text-lg">Our beliefs amplify the brand's vision, establishing its core principles, moulding its culture, and directing every decision and action we take.</p>
+                    <p className="text-sm md:text-lg">Our beliefs amplify the brand&apos;s vision, establishing its core principles, moulding its culture, and directing every decision and action we take.</p>
                 </div>
             </div>
         </div>
