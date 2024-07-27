@@ -37,8 +37,8 @@ const HeroSection = () => {
     ];
 
     return (
-        <div className={`relative h-screen flex justify-center items-center ${isScrolled ? '' : 'bg-[#a68e7f]'}`} style={isScrolled ? { backgroundImage: "url('/images/footer-bg.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' } : {}}>
-            <Slider {...settings} className="w-[90%] md:w-[800px] h-[450px]">
+        <div className={`relative h-screen flex justify-center items-center ${isScrolled ? 'bg-image-scrolled' : 'bg-image'} md:bg-cover md:bg-center`}>
+            <Slider {...settings} className="w-[90%] md:w-[800px] h-[50vh] md:h-[450px] mt-48 md:mt-0">
                 {images.map((image, index) => (
                     <div key={index} className="w-full h-full flex justify-center items-center">
                         <img
@@ -61,6 +61,20 @@ const HeroSection = () => {
 };
 
 const CookieConsentBanner = ({ isScrolled }) => {
+    const [isVisible, setIsVisible] = useState(true);
+
+    const handleAccept = () => {
+        setIsVisible(false);
+    };
+
+    const handleDecline = () => {
+        setIsVisible(false);
+    };
+
+    if (!isVisible) {
+        return null;
+    }
+
     return (
         <div
             className={`fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 px-4 py-2 rounded-lg shadow-lg border transition-all duration-300
@@ -77,12 +91,11 @@ const CookieConsentBanner = ({ isScrolled }) => {
                     </p>
                 </div>
                 <div className="flex space-x-2">
-                    <button className="bg-[#a68e7f] text-white py-1 px-4 rounded-lg">Accept</button>
-                    <button className="bg-white text-[#a68e7f] border border-[#a68e7f] py-1 px-4 rounded-lg">Decline</button>
+                    <button onClick={handleAccept} className="bg-[#a68e7f] text-white py-1 px-4 rounded-lg">Accept</button>
+                    <button onClick={handleDecline} className="bg-white text-[#a68e7f] border border-[#a68e7f] py-1 px-4 rounded-lg">Decline</button>
                 </div>
             </div>
         </div>
     );
 };
-
 export default HeroSection;

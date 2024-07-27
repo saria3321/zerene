@@ -58,6 +58,30 @@ html, body {
   }
 }
 
+.bg-image {
+  background-color: #a68e7f;
+}
+
+.bg-image-scrolled {
+  background-image: url('/images/footer-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Media query for small screens */
+@media (max-width: 767px) {
+  .bg-image {
+    background-color: #a68e7f;
+    background-image: url('/images/footer-bg.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+
+  .h-screen {
+    height: 50vh;
+  }
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
